@@ -58,7 +58,8 @@ public class Main extends Fragment {
         gift_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getContext(), Gift_Main.class);
+                startActivity(intent);
             }
         });
 

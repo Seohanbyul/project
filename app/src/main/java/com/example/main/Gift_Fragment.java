@@ -14,25 +14,24 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Datecourse_Fragment extends AppCompatActivity implements View.OnClickListener {
+public class Gift_Fragment extends AppCompatActivity implements View.OnClickListener {
 
-    TextView dateInfo, dateReview, infoLine, reviewLine;
-    Date_Info date_info;
+    TextView giftInfo, giftReview, infoLine, reviewLine;
+    Gift_Info gift_info;
     ImageView favorite;
     int i = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.date_imageclick);
+        setContentView(R.layout.gift_imageclick);
 
-        dateInfo = findViewById(R.id.dateInfo);
-        dateReview = findViewById(R.id.dateReview);
+        giftInfo = findViewById(R.id.giftInfo);
+        giftReview = findViewById(R.id.giftReview);
         infoLine = findViewById(R.id.infoLine);
         reviewLine = findViewById(R.id.reviewLine);
         favorite = findViewById(R.id.favorite);
-        date_info = new Date_Info();
-
+        gift_info = new Gift_Info();
 
         favorite.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,10 +39,10 @@ public class Datecourse_Fragment extends AppCompatActivity implements View.OnCli
                 i++;
                 if (i % 2 != 0) {
                     favorite.setBackgroundResource(R.drawable.ic_star_black_24dp);
-                    Toast.makeText(Datecourse_Fragment.this, "즐겨찾기에 추가되었습니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Gift_Fragment.this, "즐겨찾기에 추가되었습니다.", Toast.LENGTH_SHORT).show();
                 } else {
                     favorite.setBackgroundResource(R.drawable.ic_star_border_black_24dp);
-                    Toast.makeText(Datecourse_Fragment.this, "즐겨찾기에서 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Gift_Fragment.this, "즐겨찾기에서 삭제되었습니다.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -51,34 +50,33 @@ public class Datecourse_Fragment extends AppCompatActivity implements View.OnCli
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.mainFrag, new Date_Info())
+                    .replace(R.id.mainFrag, new Gift_Info())
                     .commit();
         }
-        dateInfo.setOnClickListener(this);
-        dateReview.setOnClickListener(this);
+        giftInfo.setOnClickListener(this);
+        giftReview.setOnClickListener(this);
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.dateInfo:
-                dateInfo.setTextColor(Color.rgb(184, 217, 192));
+            case R.id.giftInfo:
+                giftInfo.setTextColor(Color.rgb(184, 217, 192));
                 infoLine.setBackgroundColor(Color.rgb(184, 217, 192));
-                dateReview.setTextColor(Color.rgb(140, 140, 140));
+                giftReview.setTextColor(Color.rgb(140, 140, 140));
                 reviewLine.setBackgroundColor(Color.rgb(140, 140, 140));
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.mainFrag, new Date_Info())
+                        .replace(R.id.mainFrag, new Gift_Info())
                         .commit();
                 break;
-            case R.id.dateReview:
-                dateInfo.setTextColor(Color.rgb(140, 140, 140));
+            case R.id.giftReview:
+                giftInfo.setTextColor(Color.rgb(140, 140, 140));
                 infoLine.setBackgroundColor(Color.rgb(140, 140, 140));
-                dateReview.setTextColor(Color.rgb(184, 217, 192));
+                giftReview.setTextColor(Color.rgb(184, 217, 192));
                 reviewLine.setBackgroundColor(Color.rgb(184, 217, 192));
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.mainFrag, new Date_Review())
+                        .replace(R.id.mainFrag, new Gift_Review())
                         .commit();
                 break;
         }

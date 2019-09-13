@@ -1,5 +1,6 @@
 package com.example.main;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     FootPrint footFrag;
     StoryListFragment albumFrag;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

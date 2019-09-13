@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:background="#B8D9C0"
         android:id="@+id/cons"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/btnHome"

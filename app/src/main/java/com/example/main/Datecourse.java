@@ -1,9 +1,11 @@
 package com.example.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -16,28 +18,39 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 
 public class Datecourse extends Fragment {
+    Main mainFrag;
 
     public Datecourse(){}
 
     @Override
     @Nullable
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_date,container,false);
+        ConstraintLayout layout = (ConstraintLayout) inflater.inflate(R.layout.datecourse,container,false);
         // Fragment로 넘길 Image Resource
 
-        //ArrayList에 해당 image를 넣는다.
+        FloatingActionButton search;
+
+        search=layout.findViewById(R.id.search);
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getContext(),Datecourse_Search.class);
+                startActivity(intent);
+            }
+        });
+
         ArrayList<Integer> listImage = new ArrayList<>();
         listImage.add(R.drawable.image1);
         listImage.add(R.drawable.image2);
         listImage.add(R.drawable.image3);
         listImage.add(R.drawable.image4);
 
-        ViewPager viewPager = layout.findViewById(R.id.date_viewPager);
-        FragmentAdapter fragmentAdapter = new FragmentAdapter(getFragmentManager());
+        ViewPager viewPager = layout.findViewById(R.id.viewPager);
+        FragmentAdapter fragmentAdapter = new FragmentAdapter(getChildFragmentManager());
         // ViewPager와  FragmentAdapter 연결
         viewPager.setAdapter(fragmentAdapter);
 
-        //뷰페이저 양옆에 다음 사진이 보일 수 있게 위치 설정
         viewPager.setClipToPadding(false);
         int dpValue = 60;
         float d = getResources().getDisplayMetrics().density;

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#B8D9C0"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnHome"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/ic_home"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/netmarble_m"
+            android:text="꽁냥꽁냥"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnOverflow"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/ic_menu"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <AutoCompleteTextView
+        android:id="@+id/editText"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:completionThreshold="1"
+        android:fontFamily="@font/netmarble_m"
+        android:hint="검색어를 입력하세요."
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cons" />
+
+    <ImageView
+        android:id="@+id/search"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="28dp"
+        android:src="@drawable/search_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cons" />
+
+    <HorizontalScrollView
+        android:id="@+id/sv_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_weight="1"
+        android:scrollbars="none"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText">
+
+        <LinearLayout
+            android:id="@+id/ll_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/netmarble_m"
+                android:background="@drawable/gift_shape"
+                android:text="#꽃"
+                android:gravity="center"
+                android:textSize="19sp"
+                android:textColor="#FFFF"
+                android:layout_marginLeft="15dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/gift_shape"
+                android:fontFamily="@font/netmarble_m"
+                android:gravity="center"
+                android:text="#팔찌"
+                android:textColor="#FFFF"
+                android:textSize="19sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/netmarble_m"
+                android:background="@drawable/gift_shape"
+                android:text="#케이크"
+                android:gravity="center"
+                android:textSize="19sp"
+                android:textColor="#FFFF"
+                android:layout_marginLeft="15dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/netmarble_m"
+                android:background="@drawable/gift_shape"
+                android:text="#향수"
+                android:gravity="center"
+                android:textSize="19sp"
+                android:textColor="#FFFF"
+                android:layout_marginLeft="15dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/netmarble_m"
+                android:background="@drawable/gift_shape"
+                android:text="#목걸이"
+                android:gravity="center"
+                android:textSize="19sp"
+                android:textColor="#FFFF"
+                android:layout_marginLeft="15dp"
+                />
+        </LinearLayout>
+    </HorizontalScrollView>
+</android.support.constraint.ConstraintLayout>
